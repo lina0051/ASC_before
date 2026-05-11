@@ -1,0 +1,286 @@
+/* =========================================================================
+   DRAFT.X Design System — Colors & Type
+   ------------------------------------------------------------------------
+   Source: Figma "에이전시 디자인시스템" — /Style-Guide and /page/Frame-1.
+   Three font families (Anta, DM Sans, Inter) loaded from Google Fonts CDN
+   because no font files were embedded in the .fig binary. Manrope is
+   referenced once in the Figma style guide but NOT used in product —
+   we omit it here. All three Google-Fonts substitutions match the
+   originals (these ARE the originals — Anta, DM Sans, and Inter all live
+   on Google Fonts as their canonical distribution).
+
+   FLAG: If the user has licensed weight-cuts beyond Google Fonts'
+   defaults (e.g. an Inter variable with optical sizes), drop those .ttf
+   files into /fonts and replace the @import below with @font-face rules.
+   ========================================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Anta&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* ----------------------------------------------------------------
+     COLORS — base tokens (named after Figma's swatch labels)
+     ---------------------------------------------------------------- */
+  --dx-black:           #000000;  /* canvas */
+  --dx-cod-gray:        #121212;  /* elevated card */
+  --dx-mine-shaft:      #222222;  /* secondary card / chip */
+  --dx-white:           #FFFFFF;  /* primary text, wordmark */
+
+  --dx-silver-chalice:  #A6A6A6;  /* muted body copy */
+  --dx-silver:          #BBBBBB;  /* divider tints */
+  --dx-green-yellow:    #8CFF2E;  /* single accent */
+
+  /* alpha variants — directly from the Figma style guide */
+  --dx-black-51:           rgba(0, 0, 0, 0.51);
+  --dx-white-50:           rgba(255, 255, 255, 0.5);
+  --dx-white-08:           rgba(255, 255, 255, 0.08);
+  --dx-white-002:          rgba(255, 255, 255, 0.002);
+  --dx-silver-20:          rgba(187, 187, 187, 0.2);
+  --dx-silver-chalice-20:  rgba(166, 166, 166, 0.2);
+  --dx-silver-chalice-30:  rgba(166, 166, 166, 0.3);
+  --dx-silver-chalice-60:  rgba(166, 166, 166, 0.6);
+
+  /* ----------------------------------------------------------------
+     COLORS — semantic tokens
+     ---------------------------------------------------------------- */
+  --bg:               var(--dx-black);
+  --bg-elevated:      var(--dx-cod-gray);
+  --bg-card:          var(--dx-mine-shaft);
+
+  --fg:               var(--dx-white);            /* primary text */
+  --fg-muted:         var(--dx-silver-chalice);   /* secondary text, KR sublines */
+  --fg-subtle:        var(--dx-silver-chalice-60); /* footer / micro */
+  --fg-disabled:      var(--dx-silver-chalice-30);
+
+  --accent:           var(--dx-green-yellow);
+
+  --border:           var(--dx-silver-chalice-20); /* default 1px hairline */
+  --border-card:      var(--dx-silver-chalice-30); /* project cards */
+  --border-pill:      var(--dx-white);             /* button strokes */
+  --border-subtle:    var(--dx-white-08);          /* accordion tile inner */
+
+  --divider:          var(--dx-silver-chalice-20);
+
+  /* ----------------------------------------------------------------
+     TYPE — families
+     ---------------------------------------------------------------- */
+  --font-display: "Anta", "DM Sans", system-ui, sans-serif;
+  --font-heading: "DM Sans", "Inter", system-ui, sans-serif;
+  --font-body:    "Inter", "DM Sans", system-ui, sans-serif;
+
+  /* ----------------------------------------------------------------
+     TYPE — base scale tokens (raw sizes from the Figma style guide)
+     ---------------------------------------------------------------- */
+  --fs-wordmark:    338.3px;  /* Anta — DRAFT.X hero */
+  --fs-display-xl:  166px;    /* DM Sans Bold — section title (Awards) */
+  --fs-display-l:   88px;     /* DM Sans Medium — H1 (How we craft essentials) */
+  --fs-display-m:   79px;     /* DM Sans Medium — H2 */
+  --fs-display-s:   45px;     /* DM Sans — H3 */
+  --fs-h4:          44px;     /* DM Sans Medium — section sub */
+  --fs-h5:          40px;     /* DM Sans Medium — Investment for Excellence */
+  --fs-h6:          26px;     /* DM Sans Medium — project card titles */
+  --fs-eyebrow-lg:  23px;     /* DM Sans Bold — group headers */
+  --fs-eyebrow:     17px;     /* DM Sans Medium — tag rows */
+  --fs-body:        16.7px;   /* Inter Regular — accordion body */
+  --fs-body-sm:     15px;     /* Inter Light — KR sublines */
+  --fs-meta:        14px;     /* DM Sans / Inter — footer + nav labels */
+  --fs-micro:       13px;     /* DM Sans Medium — eyebrow micro */
+
+  /* line-heights & tracking */
+  --lh-display:    0.9;     /* tight on big type */
+  --lh-heading:    1.1;
+  --lh-body:       1.5;
+  --lh-meta:       1.2;
+
+  --tracking-display: -0.04em; /* DM Sans Bold 166px sits at -6.64px ≈ -0.04em */
+  --tracking-h-tight: -0.03em;
+  --tracking-h:       -0.02em;
+  --tracking-body:    -0.012em;
+  --tracking-meta:     0.01em;
+  --tracking-eyebrow:  0.04em; /* CAPS labels widen slightly */
+
+  /* ----------------------------------------------------------------
+     LAYOUT
+     ---------------------------------------------------------------- */
+  --page-max:    1440px;     /* content frame at 1920 viewport */
+  --page-pad-x:  240px;      /* side rails */
+  --section-py:  200px;      /* major section padding */
+  --gap-section: 100px;
+  --gap-block:   80px;
+  --gap-row:     40px;
+  --gap-tight:   12px;
+
+  /* ----------------------------------------------------------------
+     RADII
+     ---------------------------------------------------------------- */
+  --r-pill:    259px;        /* full capsule */
+  --r-card:    26px;         /* parallax card */
+  --r-card-2:  24px;         /* accordion item */
+  --r-image:   10px;         /* image frame */
+  --r-image-s: 8px;          /* nested image */
+  --r-tag:     7px;          /* style-guide variable layer */
+  --r-chip:    100px;        /* circular icon hits */
+
+  /* ----------------------------------------------------------------
+     MOTION (inferred — Framer fit-text + rolling-text + reveal)
+     ---------------------------------------------------------------- */
+  --ease-smooth: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast:    180ms;
+  --dur:         360ms;
+  --dur-slow:    600ms;
+}
+
+/* ==========================================================================
+   SEMANTIC ELEMENT STYLES
+   --------------------------------------------------------------------------
+   These cascade onto bare HTML so a marketing-page recreation looks "DRAFT.X"
+   without per-element class names. Override on .dx-scope to avoid global leak.
+   ========================================================================== */
+
+.dx, .dx-scope {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  letter-spacing: var(--tracking-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+.dx-wordmark {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--fs-wordmark);
+  line-height: 0.9;
+  letter-spacing: 0.0003em;
+  color: var(--fg);
+  mix-blend-mode: difference;
+}
+
+.dx h1, .dx-h1 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: var(--fs-display-xl);
+  line-height: var(--lh-display);
+  letter-spacing: var(--tracking-display);
+  color: var(--fg);
+}
+.dx h2, .dx-h2 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: var(--fs-display-l);
+  line-height: var(--lh-display);
+  letter-spacing: var(--tracking-h-tight);
+  color: var(--fg);
+}
+.dx h3, .dx-h3 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: var(--fs-display-s);
+  line-height: var(--lh-heading);
+  letter-spacing: var(--tracking-h-tight);
+  color: var(--fg);
+}
+.dx h4, .dx-h4 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: var(--fs-h4);
+  line-height: var(--lh-heading);
+  letter-spacing: var(--tracking-h);
+  color: var(--fg);
+}
+.dx h5, .dx-h5 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: var(--fs-h5);
+  line-height: var(--lh-heading);
+  letter-spacing: var(--tracking-h);
+  color: var(--fg);
+}
+.dx h6, .dx-h6 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: var(--fs-h6);
+  line-height: var(--lh-heading);
+  letter-spacing: var(--tracking-h);
+  color: var(--fg);
+}
+
+.dx p, .dx-p {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--fg);
+}
+.dx-p--muted {
+  color: var(--fg-muted);
+  font-weight: 300;
+  font-size: var(--fs-body-sm);
+  letter-spacing: -0.003em;
+}
+
+/* Eyebrow label — UPPERCASE, DM Sans Medium 17, slightly tracked */
+.dx-eyebrow {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: var(--fs-eyebrow);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--fg);
+}
+.dx-eyebrow--muted { color: var(--fg-muted); }
+
+/* Brace-wrapped micro tag — { value } */
+.dx-tag {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--fs-meta);
+  letter-spacing: 0.01em;
+  color: var(--fg);
+}
+.dx-tag::before { content: "{ "; color: var(--fg-muted); }
+.dx-tag::after  { content: " }"; color: var(--fg-muted); }
+
+.dx-tag--accent { color: var(--accent); }
+
+/* Capsule button — outlined, full-rounded */
+.dx-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 12px 22px;
+  border: 2px solid var(--border-pill);
+  border-radius: var(--r-pill);
+  background: transparent;
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--fs-meta);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background var(--dur) var(--ease-smooth),
+              color    var(--dur) var(--ease-smooth);
+  mix-blend-mode: difference;
+}
+.dx-btn:hover { background: var(--fg); color: var(--bg); }
+.dx-btn:active { transform: scale(0.96); }
+
+/* Section-divider rule with eyebrow labels left+right */
+.dx-section-rule {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 20px 16px;
+  border-bottom: 1px solid var(--divider);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--fs-micro);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
